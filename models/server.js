@@ -7,9 +7,7 @@ class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.usuariosPath = '/api/usuarios';
-
-
+        this.usuarioPath = '/api/usuarios';
 
         this.conectarDB();
         this.middlewares();
@@ -27,17 +25,12 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.usuariosPath, require('../routes/user.routes'));
-
+        this.app.use(this.usuarioPath, require('../routes/user.routes'));
     }
-
-
 
     listen(){
         this.app.listen(this.port, () =>{
-
             console.log('Servidor ejecutandose y escuchando el puerto', this.port)
-
         });
     }
 }
