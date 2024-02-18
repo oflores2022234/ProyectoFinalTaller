@@ -11,6 +11,8 @@ const categoriaPost = async (req, res) => {
     });
 }
 
+
+
 module.exports = {
     categoriaPost
 }
