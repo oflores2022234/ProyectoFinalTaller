@@ -1,5 +1,4 @@
-const { Schema, model } = require('mongoose');
-
+const { Schema, model} = require('mongoose');
 
 const UsuarioSchema = Schema({
 
@@ -12,14 +11,12 @@ const UsuarioSchema = Schema({
         require: [true, 'El correo es obligatorio'],
         unique: true
     },
-    telefono:{
-        type: String,
-        require: [true, 'El numero de telefono es obligatorio'],
-        unique: true
-    },
     password:{
         type: String,
         require: [true, 'La contraseña es obligatoria']
+    },
+    img:{
+        type: String
     },
     role:{
         type: String,
@@ -29,8 +26,11 @@ const UsuarioSchema = Schema({
     estado:{
         type: Boolean,
         default: true
+    },
+    google:{
+        type: Boolean,
+        default: false
     }
-
 
 });
 
