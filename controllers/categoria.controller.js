@@ -10,9 +10,16 @@ const categoriaPost = async (req, res) => {
         categoria
     });
 }
+/*
+const categoriasGet = async (req, res = response) => {
+    const {limite, desde} = req.query;
+    const query = {estado: true};
 
+    const [total, categorias] = await Promise.all({
 
-
+    })
+}
+*/
 module.exports = {
     categoriaPost
 }
