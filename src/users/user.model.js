@@ -23,10 +23,7 @@ const UserSchema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  google: {
-    type: Boolean,
-    default: true,
-  },
+
 });
 
 UserSchema.methods.toJSON = function(){
