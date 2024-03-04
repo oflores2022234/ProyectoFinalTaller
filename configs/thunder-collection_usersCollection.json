@@ -1,0 +1,78 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "usersCollection",
+    "dateExported": "2024-03-04T23:16:02.882Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e11ef385-ddb8-46d2-95e4-0500573660b8",
+            "colId": "9a91b4fb-5c1c-4e96-98ae-470d5dd3a091",
+            "containerId": "",
+            "name": "usersPost",
+            "url": "http://localhost:8080/shop/v1/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-04T22:42:23.746Z",
+            "modified": "2024-03-04T22:47:51.002Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Juan Flores\",\n  \"correo\": \"juans1@gmail.com\",\n  \"password\": \"123123\",\n  \"role\": \"ADMIN_ROLE\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "45438ed1-95b5-4a6f-b343-522aeb76a885",
+            "colId": "9a91b4fb-5c1c-4e96-98ae-470d5dd3a091",
+            "containerId": "",
+            "name": "usersGet",
+            "url": "http://localhost:8080/shop/v1/users",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-04T23:02:06.689Z",
+            "modified": "2024-03-04T23:02:13.313Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "267edad6-cdbf-48a2-91e5-4b2076ad54a2",
+            "colId": "9a91b4fb-5c1c-4e96-98ae-470d5dd3a091",
+            "containerId": "",
+            "name": "usersPut",
+            "url": "http://localhost:8080/shop/v1/users/65e64f967489309ea251981f",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-04T23:10:36.407Z",
+            "modified": "2024-03-04T23:11:42.047Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Alejandro Flores\",\n  \"correo\": \"alejandro@gmail.com\",\n  \"password\": \"123123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a678c86b-24d6-4d9b-93ed-8c07cce0659c",
+            "colId": "9a91b4fb-5c1c-4e96-98ae-470d5dd3a091",
+            "containerId": "",
+            "name": "usersDelete",
+            "url": "http://localhost:8080/shop/v1/users/65e64f967489309ea251981f",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-03-04T23:13:57.759Z",
+            "modified": "2024-03-04T23:14:14.037Z",
+            "headers": [],
+            "params": [],
+            "reqType": "put",
+            "tests": []
+        }
+    ]
+}
