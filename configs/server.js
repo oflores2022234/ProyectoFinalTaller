@@ -5,7 +5,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js';
-import userRoutes from '../src/users/user.router.js';
+import userRoutes from '../src/users/user.routes.js';
 
 
 class Server{
