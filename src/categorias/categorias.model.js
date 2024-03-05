@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 
 const CategoriaSchema = mongoose.Schema({
     nombre: {
@@ -14,5 +14,11 @@ const CategoriaSchema = mongoose.Schema({
         default: true,
     },
 });
+
+CategoriaSchema.methods.toJSON = function(){
+    const { __v, _id, ...categoria} = this.toObject();
+    categoria.uid = _id;
+    return categoria;
+}
 
 export default mongoose.model('Categoria', CategoriaSchema);

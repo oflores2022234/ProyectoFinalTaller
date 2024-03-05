@@ -1,5 +1,6 @@
 
 import User from '../users/user.model.js'
+import Categoria from '../categorias/categorias.model.js'
 
 
 
@@ -14,5 +15,19 @@ export const existeUsuarioById = async (id = '') => {
     const existeUsuario = await User.findById(id);
     if (!existeUsuario){
         throw new Error(`El ID: ${correo} No existe`);
+    }
+}
+
+export const existenteCategoria = async (nombre = '') => {
+    const existeCategoria = await Categoria.findOne({nombre});
+    if(existeCategoria){
+        throw new Error(`El nombre ${nombre} ya fue registrado`);
+    }
+}
+
+export const existeCategoriaById = async (id = '') => {
+    const existeCategoriaBI = await Categoria.findById(id);
+    if (!existeCategoriaBI){
+        throw new Error(`El ID: ${nombre} no existe`);
     }
 }
