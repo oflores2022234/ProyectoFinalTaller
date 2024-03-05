@@ -1,0 +1,81 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "categoriaCollection",
+    "dateExported": "2024-03-05T19:55:20.397Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f9786b9c-9ba8-43be-913f-02068b6cac5b",
+            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "containerId": "",
+            "name": "categoria post",
+            "url": "http://localhost:8080/shop/v1/categoria",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-05T19:18:47.358Z",
+            "modified": "2024-03-05T19:27:25.238Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Otras\",\n  \"descripcion\": \"Otros productos\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "af9ff1c0-597f-4d1c-9042-1cbc4d74de86",
+            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "containerId": "",
+            "name": "categoria get",
+            "url": "http://localhost:8080/shop/v1/categoria",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-05T19:33:41.030Z",
+            "modified": "2024-03-05T19:33:47.383Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "d4449a77-a8ef-479d-b776-d32fbd11c9e6",
+            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "containerId": "",
+            "name": "categoria put",
+            "url": "http://localhost:8080/shop/v1/categoria/65e771b0fd33e0e55f8e2754",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-05T19:40:29.448Z",
+            "modified": "2024-03-05T19:41:39.291Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"LIMPIEZA\",\n  \"descripcion\": \"Esta es la nueva descripcion\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b129cc7f-a464-4211-ad71-2c9664363a6d",
+            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "containerId": "",
+            "name": "categoria delete",
+            "url": "http://localhost:8080/shop/v1/categoria/65e771b0fd33e0e55f8e2754",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-05T19:46:48.103Z",
+            "modified": "2024-03-05T19:47:39.293Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzZjYWQ5ZDhlYzEwZTdmOTY3NDkiLCJpYXQiOjE3MDk2NjgwNDQsImV4cCI6MTcwOTY3MTY0NH0.0c3NNd0ufnbwVKL38HQCm0JlOmW7AJiM432SVkL2MXw"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
