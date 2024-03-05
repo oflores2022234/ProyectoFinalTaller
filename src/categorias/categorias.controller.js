@@ -31,21 +31,44 @@ export const categoriasGet = async (req = request, res = response) => {
 
 export const categoriasPut = async (req, res = response) => {
     const { id } = req.params;
-    const {_id, ...resto} = req.body;
+    const { _id, ...resto } = req.body;
 
-    await Categoria.findByIdAndUpdate(id, resto);
+    try {
+        const categoriaActualizada = await Categoria.findByIdAndUpdate(id, resto, { new: true });
+        //esta usamos el update may, 
+        //await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaActualizada._id } });
 
-    const categoria = await Categoria.findOne({_id: id});
-
-    res.status(200).json({
-        msg: "Categoty Update",
-        categoria
-    });
+        res.status(200).json({
+            msg: "Category Update",
+            categoria: categoriaActualizada
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-export const categoriasDelete = async (req, res) => {
-    const {id} = req.params;
 
-    const categoria = await Categoria.findByIdAndUpdate(id, { estado: false});
-    res.status(200).json({msg:'Categoria to delete', categoria});
-}
+export const categoriasDelete = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        // Buscar la categoría que se va a eliminar
+        const categoria = await Categoria.findById(id);
+        if (!categoria) {
+            return res.status(404).json({ msg: "Categoría no encontrada" });
+        }
+
+        // Buscar la categoría alternativa
+        const categoriaAlternativa = await Categoria.findOne({ nombre: "Otra categoría" }); // Aquí debes especificar el nombre de la categoría alternativa
+
+        // Actualizar los productos relacionados asignándoles la categoría alternativa
+       // await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaAlternativa ? categoriaAlternativa._id : null } });
+
+        // Cambiar el estado de la categoría a false
+        const categoriaActualizada = await Categoria.findByIdAndUpdate(id, { estado: false }, { new: true });
+
+        res.status(200).json({ msg: "Categoría eliminada correctamente", categoria: categoriaActualizada });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
