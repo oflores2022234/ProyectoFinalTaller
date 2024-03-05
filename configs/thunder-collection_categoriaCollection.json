@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoriaCollection",
-    "dateExported": "2024-03-05T19:55:20.397Z",
+    "dateExported": "2024-03-05T23:16:22.574Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,14 +14,15 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-05T19:18:47.358Z",
-            "modified": "2024-03-05T19:27:25.238Z",
+            "modified": "2024-03-05T22:45:23.385Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Otras\",\n  \"descripcion\": \"Otros productos\"\n}\n",
+                "raw": "{\n  \"nombre\": \"asdf\",\n  \"descripcion\": \"asdf tecnologicos\"\n}\n",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
@@ -44,18 +45,19 @@
             "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
             "containerId": "",
             "name": "categoria put",
-            "url": "http://localhost:8080/shop/v1/categoria/65e771b0fd33e0e55f8e2754",
+            "url": "http://localhost:8080/shop/v1/categoria/65e77e9ee6536983b836426b",
             "method": "PUT",
             "sortNum": 30000,
             "created": "2024-03-05T19:40:29.448Z",
-            "modified": "2024-03-05T19:41:39.291Z",
+            "modified": "2024-03-05T20:21:04.072Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"LIMPIEZA\",\n  \"descripcion\": \"Esta es la nueva descripcion\"\n}",
+                "raw": "{\n  \"nombre\": \"TECNOLOGIA Y SMART HOUSE\",\n  \"descripcion\": \"Esta es la nueva descripcion\"\n}",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {
@@ -63,18 +65,19 @@
             "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
             "containerId": "",
             "name": "categoria delete",
-            "url": "http://localhost:8080/shop/v1/categoria/65e771b0fd33e0e55f8e2754",
+            "url": "http://localhost:8080/shop/v1/categoria/65e7a083e10b640aac895084",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2024-03-05T19:46:48.103Z",
-            "modified": "2024-03-05T19:47:39.293Z",
+            "modified": "2024-03-05T22:47:05.244Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzZjYWQ5ZDhlYzEwZTdmOTY3NDkiLCJpYXQiOjE3MDk2NjgwNDQsImV4cCI6MTcwOTY3MTY0NH0.0c3NNd0ufnbwVKL38HQCm0JlOmW7AJiM432SVkL2MXw"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3N2MwMzQ1NzY4MTFiYmY3MjgwMzciLCJpYXQiOjE3MDk2Nzg4MTYsImV4cCI6MTcwOTY4MjQxNn0.ghgo0FDsqtV2Q5j8cljWjtVXbnfWS8xsOhTAdWoc5wY"
                 }
             ],
             "params": [],
+            "reqType": "del",
             "tests": []
         }
     ]

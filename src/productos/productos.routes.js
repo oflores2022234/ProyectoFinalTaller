@@ -13,6 +13,6 @@ const router = Router();
 router.post(
     "/",
     [
-        
+        //check("nombre")
     ]
 )

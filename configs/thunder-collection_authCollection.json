@@ -1,27 +1,28 @@
 {
     "client": "Thunder Client",
     "collectionName": "authCollection",
-    "dateExported": "2024-03-05T13:42:59.861Z",
+    "dateExported": "2024-03-05T23:16:36.637Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "9271777b-6ee8-4c80-93a1-8fa59a3dc10e",
-            "colId": "2f71909f-6c7a-4e2f-bf28-e58787010f03",
+            "_id": "743569bb-f033-4670-a24c-280b603d6819",
+            "colId": "32f4ae9b-54f5-4423-823b-eface08e35b8",
             "containerId": "",
             "name": "login",
             "url": "http://localhost:8080/shop/v1/auth/login",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-05T13:32:36.297Z",
-            "modified": "2024-03-05T13:40:35.357Z",
+            "created": "2024-03-05T18:50:54.428Z",
+            "modified": "2024-03-05T22:46:56.021Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"correo\": \"oflores@gmail.com\",\n  \"password\": \"123123\"\n}",
+                "raw": "{\n  \"correo\": \"ayllescas05@gmail.com\",\n  \"password\": \"123123\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         }
     ]

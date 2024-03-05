@@ -2,36 +2,30 @@ import Productos from './productos.model.js';
 import Categorias from '../categorias/categorias.model.js';
 
 export const productosPost = async (req, res) => {
-    const { nombre, descripcion, categoriaI, precio, stock} = req.body;
+    const data = req.body;
 
     try {
-        const categoria = await Categorias.findById(categoriaI);
-        /*
-        probar luego con findOne para llamar por nombre en la linea 8
-        const categoria = await Categorias.findById(categoriaI);
-        */
+        const categoria = await Categorias.findOne({nombre: data.cate});
 
         if(!categoria){
             return res.status(404).json({msg: 'Categoria no encontrada'});
         }
 
         const producto = new Productos({
-            nombre,
-            descripcion,
-            categoria: categoriaI,
-            precio,
-            stock
+            ...data,
+            categoria:categoria._id
         });
 
         await producto.save();
 
-        res.status(201).json({
-            msg: 'Producto agregado correctamente',
-            producto: {
-                ...producto.toObject(),
-                nombreCategoria: categoria.nombre,
-            }
-        });
+        categoria.productos.push(producto._id)
+        await categoria.save();
+
+        res.status(200).json({ 
+            msg: 'Nuevo producto agregado',
+            producto
+        });    
+
         
     } catch (error) {
         console.error('Error , cannot add product', error);

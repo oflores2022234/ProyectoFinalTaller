@@ -1,6 +1,7 @@
 
 import User from '../users/user.model.js'
 import Categoria from '../categorias/categorias.model.js'
+import Productos from '../productos/productos.model.js'
 
 
 
@@ -31,3 +32,12 @@ export const existeCategoriaById = async (id = '') => {
         throw new Error(`El ID: ${nombre} no existe`);
     }
 }
+
+export const existeNombreProeudto = async (nombre = '') => {
+    const existeProducto = await Productos.findOne({nombre});
+    if(existeProducto){
+        throw new Error(`El nombre ${nombre} ya fue registrado`);
+    }
+}
+
+//export const 

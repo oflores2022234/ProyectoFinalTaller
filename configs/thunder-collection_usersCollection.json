@@ -1,40 +1,40 @@
 {
     "client": "Thunder Client",
     "collectionName": "usersCollection",
-    "dateExported": "2024-03-05T13:42:52.613Z",
+    "dateExported": "2024-03-05T23:16:32.989Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "6a1efdcb-e0a1-4cfe-8213-209b4350692e",
-            "colId": "474c72a3-e2a6-40b5-9463-ea674e5cf0ca",
+            "_id": "190e4767-9500-4247-a388-03959d7551f0",
+            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
             "containerId": "",
             "name": "usersPost",
             "url": "http://localhost:8080/shop/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-05T03:59:06.786Z",
-            "modified": "2024-03-05T13:35:33.232Z",
+            "created": "2024-03-05T18:50:54.442Z",
+            "modified": "2024-03-05T20:09:37.330Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Oscar\",\n  \"correo\": \"oflores@gmail.com\",\n  \"password\": \"123123\",\n  \"role\": \"CLIENT_ROLE\"\n}",
+                "raw": "{\n  \"nombre\": \"Alejandro\",\n  \"correo\": \"ayllescas05@gmail.com\",\n  \"password\": \"123123\",\n  \"role\": \"ADMIN_ROLE\"\n}",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "61742058-d355-4895-b5a8-7481f9b10898",
-            "colId": "474c72a3-e2a6-40b5-9463-ea674e5cf0ca",
+            "_id": "b4cceb17-96d1-428e-8b9b-7bd743a92d37",
+            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
             "containerId": "",
             "name": "usersGet",
             "url": "http://localhost:8080/shop/v1/users?desde=0&limite=10",
             "method": "GET",
             "sortNum": 40000,
-            "created": "2024-03-05T03:59:06.787Z",
-            "modified": "2024-03-05T04:10:21.172Z",
+            "created": "2024-03-05T18:50:54.443Z",
+            "modified": "2024-03-05T18:50:54.443Z",
             "headers": [],
             "params": [
                 {
@@ -51,15 +51,15 @@
             "tests": []
         },
         {
-            "_id": "b86e4009-debe-4d04-836a-fb146ebfdb99",
-            "colId": "474c72a3-e2a6-40b5-9463-ea674e5cf0ca",
+            "_id": "a815fe0b-15ab-4562-a1e3-2051c7c67612",
+            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
             "containerId": "",
             "name": "usersPut",
             "url": "http://localhost:8080/shop/v1/users/65e64f967489309ea251981f",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-03-05T03:59:06.788Z",
-            "modified": "2024-03-05T03:59:06.788Z",
+            "created": "2024-03-05T18:50:54.444Z",
+            "modified": "2024-03-05T18:50:54.444Z",
             "headers": [],
             "params": [],
             "body": {
@@ -70,19 +70,19 @@
             "tests": []
         },
         {
-            "_id": "179d1c9b-05cb-4d41-b84f-6f1f0f9db725",
-            "colId": "474c72a3-e2a6-40b5-9463-ea674e5cf0ca",
+            "_id": "32f76d09-cc49-4366-853f-e5a8e2f057c4",
+            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
             "containerId": "",
             "name": "usersDelete",
-            "url": "http://localhost:8080/shop/v1/users/65e69992783ce4eb9c4389e6",
+            "url": "http://localhost:8080/shop/v1/users/65e64f8ad45aaaec89187fac",
             "method": "DELETE",
             "sortNum": 60000,
-            "created": "2024-03-05T03:59:06.789Z",
-            "modified": "2024-03-05T13:41:00.393Z",
+            "created": "2024-03-05T18:50:54.445Z",
+            "modified": "2024-03-05T20:09:56.839Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3MWZhNWVlMDQ3OGJmMDljZGE5NDIiLCJpYXQiOjE3MDk2NDYwMzUsImV4cCI6MTcwOTY0OTYzNX0.53eXvRFyqQJXGOj7Eppa-pYFEZuMz8R-Y-r4DZYbSkE"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3N2MwMzQ1NzY4MTFiYmY3MjgwMzciLCJpYXQiOjE3MDk2NjkzODYsImV4cCI6MTcwOTY3Mjk4Nn0.JmAOYlim3lO8hFaoZZx7PefkDIZ8hzj4OdfA6_ycNm4"
                 }
             ],
             "params": [],
