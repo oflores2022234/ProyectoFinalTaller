@@ -1,40 +1,40 @@
 {
     "client": "Thunder Client",
     "collectionName": "usersCollection",
-    "dateExported": "2024-03-05T23:16:32.989Z",
+    "dateExported": "2024-03-06T06:17:32.976Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "190e4767-9500-4247-a388-03959d7551f0",
-            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
+            "_id": "c6232c20-60aa-4bb4-9658-565292b18061",
+            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
             "containerId": "",
             "name": "usersPost",
             "url": "http://localhost:8080/shop/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-05T18:50:54.442Z",
-            "modified": "2024-03-05T20:09:37.330Z",
+            "created": "2024-03-06T03:50:41.825Z",
+            "modified": "2024-03-06T04:21:54.850Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Alejandro\",\n  \"correo\": \"ayllescas05@gmail.com\",\n  \"password\": \"123123\",\n  \"role\": \"ADMIN_ROLE\"\n}",
+                "raw": "{\n  \"nombre\": \"Alejandro\",\n  \"correo\": \"ayllescas05@gmail.com\",\n  \"password\": \"123123\",\n  \"role\": \"CLIENT_ROLE\"\n}",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "b4cceb17-96d1-428e-8b9b-7bd743a92d37",
-            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
+            "_id": "eaf3b732-fbcb-4eb3-92c4-017dd1ffe783",
+            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
             "containerId": "",
             "name": "usersGet",
             "url": "http://localhost:8080/shop/v1/users?desde=0&limite=10",
             "method": "GET",
             "sortNum": 40000,
-            "created": "2024-03-05T18:50:54.443Z",
-            "modified": "2024-03-05T18:50:54.443Z",
+            "created": "2024-03-06T03:50:41.826Z",
+            "modified": "2024-03-06T03:50:41.826Z",
             "headers": [],
             "params": [
                 {
@@ -51,15 +51,15 @@
             "tests": []
         },
         {
-            "_id": "a815fe0b-15ab-4562-a1e3-2051c7c67612",
-            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
+            "_id": "4f0d03bd-6de2-41d5-bc7f-ef37514e8aca",
+            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
             "containerId": "",
             "name": "usersPut",
             "url": "http://localhost:8080/shop/v1/users/65e64f967489309ea251981f",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-03-05T18:50:54.444Z",
-            "modified": "2024-03-05T18:50:54.444Z",
+            "created": "2024-03-06T03:50:41.827Z",
+            "modified": "2024-03-06T03:50:41.827Z",
             "headers": [],
             "params": [],
             "body": {
@@ -70,15 +70,15 @@
             "tests": []
         },
         {
-            "_id": "32f76d09-cc49-4366-853f-e5a8e2f057c4",
-            "colId": "222d596d-8f18-4578-b340-3cfb14076bee",
+            "_id": "c00e9879-1355-4274-85fb-1ac2a3a1e5f8",
+            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
             "containerId": "",
             "name": "usersDelete",
             "url": "http://localhost:8080/shop/v1/users/65e64f8ad45aaaec89187fac",
             "method": "DELETE",
             "sortNum": 60000,
-            "created": "2024-03-05T18:50:54.445Z",
-            "modified": "2024-03-05T20:09:56.839Z",
+            "created": "2024-03-06T03:50:41.828Z",
+            "modified": "2024-03-06T03:50:41.828Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -86,7 +86,6 @@
                 }
             ],
             "params": [],
-            "reqType": "del",
             "tests": []
         }
     ]

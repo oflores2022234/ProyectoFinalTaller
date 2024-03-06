@@ -1,55 +1,54 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoriaCollection",
-    "dateExported": "2024-03-05T23:16:22.574Z",
+    "dateExported": "2024-03-06T06:17:37.650Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "f9786b9c-9ba8-43be-913f-02068b6cac5b",
-            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "_id": "2569eea6-fdea-440b-b2bc-142d862350df",
+            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
             "containerId": "",
             "name": "categoria post",
             "url": "http://localhost:8080/shop/v1/categoria",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-05T19:18:47.358Z",
-            "modified": "2024-03-05T22:45:23.385Z",
+            "created": "2024-03-06T03:50:41.797Z",
+            "modified": "2024-03-06T04:03:18.073Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"asdf\",\n  \"descripcion\": \"asdf tecnologicos\"\n}\n",
+                "raw": "{\n  \"nombre\": \"Tecnología\",\n  \"descripcion\": \"Productos para el hogar\"\n}\n",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "af9ff1c0-597f-4d1c-9042-1cbc4d74de86",
-            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "_id": "a94fb722-c6e2-40f8-9751-db9b77524a55",
+            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
             "containerId": "",
             "name": "categoria get",
             "url": "http://localhost:8080/shop/v1/categoria",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-05T19:33:41.030Z",
-            "modified": "2024-03-05T19:33:47.383Z",
+            "created": "2024-03-06T03:50:41.798Z",
+            "modified": "2024-03-06T03:50:41.798Z",
             "headers": [],
             "params": [],
-            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "d4449a77-a8ef-479d-b776-d32fbd11c9e6",
-            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "_id": "172cc144-0551-4c62-965b-f008a5d3b450",
+            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
             "containerId": "",
             "name": "categoria put",
             "url": "http://localhost:8080/shop/v1/categoria/65e77e9ee6536983b836426b",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-03-05T19:40:29.448Z",
-            "modified": "2024-03-05T20:21:04.072Z",
+            "created": "2024-03-06T03:50:41.799Z",
+            "modified": "2024-03-06T03:50:41.799Z",
             "headers": [],
             "params": [],
             "body": {
@@ -57,19 +56,18 @@
                 "raw": "{\n  \"nombre\": \"TECNOLOGIA Y SMART HOUSE\",\n  \"descripcion\": \"Esta es la nueva descripcion\"\n}",
                 "form": []
             },
-            "reqType": "put",
             "tests": []
         },
         {
-            "_id": "b129cc7f-a464-4211-ad71-2c9664363a6d",
-            "colId": "054efe68-537b-4935-bf5d-d73758cc9f1b",
+            "_id": "d92a229c-80eb-4d84-92b0-e8380776b6d2",
+            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
             "containerId": "",
             "name": "categoria delete",
             "url": "http://localhost:8080/shop/v1/categoria/65e7a083e10b640aac895084",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-03-05T19:46:48.103Z",
-            "modified": "2024-03-05T22:47:05.244Z",
+            "created": "2024-03-06T03:50:41.800Z",
+            "modified": "2024-03-06T03:50:41.800Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -77,7 +75,6 @@
                 }
             ],
             "params": [],
-            "reqType": "del",
             "tests": []
         }
     ]

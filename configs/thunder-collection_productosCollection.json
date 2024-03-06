@@ -1,0 +1,92 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "productosCollection",
+    "dateExported": "2024-03-06T06:17:28.832Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "985ab9c9-268f-40a9-8dee-b1e3623df90b",
+            "colId": "ef97525e-daa9-4bfe-acec-dc3b220b5dc7",
+            "containerId": "",
+            "name": "productos post",
+            "url": "http://localhost:8080/shop/v1/producto",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-06T03:51:02.016Z",
+            "modified": "2024-03-06T04:23:24.127Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZWU2NWZkOWUzMjk3NzE5NGZhMjIiLCJpYXQiOjE3MDk2OTg5ODMsImV4cCI6MTcwOTcwMjU4M30.8G8THHCShC_Fh7kWA5eIulhQoYLTGO6TzWHqAR8m9qA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"iPhone 16 pro max\",\n  \"descripcion\": \"12gb de memoria ram y 512gb de almacenamiento\",\n  \"categoria\": \"Tecnología\",\n  \"precio\": 14500.50,\n  \"stock\": 10\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "d5384c69-fcff-4260-a278-cd1b2e63aa42",
+            "colId": "ef97525e-daa9-4bfe-acec-dc3b220b5dc7",
+            "containerId": "",
+            "name": "productos get",
+            "url": "http://localhost:8080/shop/v1/producto",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-06T04:43:07.584Z",
+            "modified": "2024-03-06T04:43:15.205Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "6090722b-568f-4567-885d-3cc7dd830e94",
+            "colId": "ef97525e-daa9-4bfe-acec-dc3b220b5dc7",
+            "containerId": "",
+            "name": "productos put",
+            "url": "http://localhost:8080/shop/v1/producto/65e7eb9850d55b279b6f5ae8",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-06T05:50:12.900Z",
+            "modified": "2024-03-06T06:05:44.389Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZWU2NWZkOWUzMjk3NzE5NGZhMjIiLCJpYXQiOjE3MDk3MDQyNjgsImV4cCI6MTcwOTcwNzg2OH0.807XTUpuaT3FByDCvrX5jsqUtxMM_Zst_qboik3PnIk"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"iPhone 1500 pro max ultra super\",\n  \"descripcion\": \"1508gb de memoria ram y 512gb de almacenamiento\",\n  \"categoria\": \"Tecnología\",\n  \"precio\": 14500.50,\n  \"stock\": 10\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f4827ed2-dbf2-41ab-a292-f1fb812e7a9f",
+            "colId": "ef97525e-daa9-4bfe-acec-dc3b220b5dc7",
+            "containerId": "",
+            "name": "products delete",
+            "url": "http://localhost:8080/shop/v1/producto/65e7eabaf497f457c954de90",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-06T06:14:53.367Z",
+            "modified": "2024-03-06T06:15:39.998Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZWU2NWZkOWUzMjk3NzE5NGZhMjIiLCJpYXQiOjE3MDk3MDQyNjgsImV4cCI6MTcwOTcwNzg2OH0.807XTUpuaT3FByDCvrX5jsqUtxMM_Zst_qboik3PnIk"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
