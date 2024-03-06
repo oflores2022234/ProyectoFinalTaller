@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "authCollection",
-    "dateExported": "2024-03-06T06:17:41.476Z",
+    "dateExported": "2024-03-06T23:15:51.219Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "e43c644f-51bc-4b04-8d2b-b60c4214a3d1",
-            "colId": "f25d1b68-3825-409e-9190-80400a41e174",
+            "_id": "7bf4c355-3aee-494f-a667-0e2bd186dd06",
+            "colId": "b93f4f83-925b-4375-a2c9-73d52a5332a9",
             "containerId": "",
             "name": "login",
             "url": "http://localhost:8080/shop/v1/auth/login",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-06T03:50:41.780Z",
-            "modified": "2024-03-06T04:23:03.068Z",
+            "created": "2024-03-06T20:32:01.873Z",
+            "modified": "2024-03-06T20:32:01.873Z",
             "headers": [],
             "params": [],
             "body": {
@@ -22,7 +22,6 @@
                 "raw": "{\n  \"correo\": \"admin@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
                 "form": []
             },
-            "reqType": "post",
             "tests": []
         }
     ]

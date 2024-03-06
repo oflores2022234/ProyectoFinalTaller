@@ -1,80 +1,92 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoriaCollection",
-    "dateExported": "2024-03-06T06:17:37.650Z",
+    "dateExported": "2024-03-06T23:15:58.322Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "2569eea6-fdea-440b-b2bc-142d862350df",
-            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
+            "_id": "1b97d0b2-3268-4e36-8b8f-40288986a5cb",
+            "colId": "5749331c-2f7f-4ed5-916b-78cf2e6e9101",
             "containerId": "",
             "name": "categoria post",
             "url": "http://localhost:8080/shop/v1/categoria",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-06T03:50:41.797Z",
-            "modified": "2024-03-06T04:03:18.073Z",
-            "headers": [],
+            "created": "2024-03-06T20:32:01.883Z",
+            "modified": "2024-03-06T20:35:58.466Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4ZDM1MGRlYTVjZDI3MDYwMDUyOWIiLCJpYXQiOjE3MDk3NTcyNzcsImV4cCI6MTcwOTc2MDg3N30.neM5DWu8WPVHmOJDvOziDdkM7pU4imYhpU9UZ7SuTlM"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Tecnología\",\n  \"descripcion\": \"Productos para el hogar\"\n}\n",
+                "raw": "{\n  \"nombre\": \"Celulares\",\n  \"descripcion\": \"Productos para el hogar\"\n}\n",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "a94fb722-c6e2-40f8-9751-db9b77524a55",
-            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
+            "_id": "e4fb8972-cafc-4315-8b3c-a6ceffb61f1a",
+            "colId": "5749331c-2f7f-4ed5-916b-78cf2e6e9101",
             "containerId": "",
             "name": "categoria get",
             "url": "http://localhost:8080/shop/v1/categoria",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-06T03:50:41.798Z",
-            "modified": "2024-03-06T03:50:41.798Z",
+            "created": "2024-03-06T20:32:01.884Z",
+            "modified": "2024-03-06T20:32:01.884Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "172cc144-0551-4c62-965b-f008a5d3b450",
-            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
+            "_id": "9fcebb24-e8e6-4394-9fc0-ec710eff56e0",
+            "colId": "5749331c-2f7f-4ed5-916b-78cf2e6e9101",
             "containerId": "",
             "name": "categoria put",
-            "url": "http://localhost:8080/shop/v1/categoria/65e77e9ee6536983b836426b",
+            "url": "http://localhost:8080/shop/v1/categoria/65e8d3aedea5cd27060052b4",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-03-06T03:50:41.799Z",
-            "modified": "2024-03-06T03:50:41.799Z",
-            "headers": [],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"nombre\": \"TECNOLOGIA Y SMART HOUSE\",\n  \"descripcion\": \"Esta es la nueva descripcion\"\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "d92a229c-80eb-4d84-92b0-e8380776b6d2",
-            "colId": "009b3277-e7c7-45b5-82aa-ee0f81375cc0",
-            "containerId": "",
-            "name": "categoria delete",
-            "url": "http://localhost:8080/shop/v1/categoria/65e7a083e10b640aac895084",
-            "method": "DELETE",
-            "sortNum": 40000,
-            "created": "2024-03-06T03:50:41.800Z",
-            "modified": "2024-03-06T03:50:41.800Z",
+            "created": "2024-03-06T20:32:01.885Z",
+            "modified": "2024-03-06T20:40:20.814Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3N2MwMzQ1NzY4MTFiYmY3MjgwMzciLCJpYXQiOjE3MDk2Nzg4MTYsImV4cCI6MTcwOTY4MjQxNn0.ghgo0FDsqtV2Q5j8cljWjtVXbnfWS8xsOhTAdWoc5wY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4ZDM1MGRlYTVjZDI3MDYwMDUyOWIiLCJpYXQiOjE3MDk3NTcyNzcsImV4cCI6MTcwOTc2MDg3N30.neM5DWu8WPVHmOJDvOziDdkM7pU4imYhpU9UZ7SuTlM"
                 }
             ],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Phones and more\",\n  \"descripcion\": \"Esta es la nueva descripcion\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "e5103027-2d46-49c3-b41e-d4a43fc3a744",
+            "colId": "5749331c-2f7f-4ed5-916b-78cf2e6e9101",
+            "containerId": "",
+            "name": "categoria delete",
+            "url": "http://localhost:8080/shop/v1/categoria/65e8d593c4e106a0f7fad0f9",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-06T20:32:01.886Z",
+            "modified": "2024-03-06T20:44:43.096Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4ZDM1MGRlYTVjZDI3MDYwMDUyOWIiLCJpYXQiOjE3MDk3NTcyNzcsImV4cCI6MTcwOTc2MDg3N30.neM5DWu8WPVHmOJDvOziDdkM7pU4imYhpU9UZ7SuTlM"
+                }
+            ],
+            "params": [],
+            "reqType": "del",
             "tests": []
         }
     ]

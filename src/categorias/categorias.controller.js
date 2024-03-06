@@ -1,6 +1,7 @@
 import { response, request } from "express";
 import bcryptjs from 'bcryptjs';
 import Categoria from './categorias.model.js';
+import Producto from '../productos/productos.model.js';
 
 export const categoriasPost = async (req, res) => {
     const { nombre, descripcion } = req.body;
@@ -36,7 +37,7 @@ export const categoriasPut = async (req, res = response) => {
     try {
         const categoriaActualizada = await Categoria.findByIdAndUpdate(id, resto, { new: true });
         //esta usamos el update may, 
-        //await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaActualizada._id } });
+        await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaActualizada._id } });
 
         res.status(200).json({
             msg: "Category Update",
@@ -59,10 +60,10 @@ export const categoriasDelete = async (req, res) => {
         }
 
         // Buscar la categoría alternativa
-        const categoriaAlternativa = await Categoria.findOne({ nombre: "Otra categoría" }); // Aquí debes especificar el nombre de la categoría alternativa
+        const categoriaAlternativa = await Categoria.findOne({ nombre: "Tecnología" }); // Aquí debes especificar el nombre de la categoría alternativa
 
         // Actualizar los productos relacionados asignándoles la categoría alternativa
-       // await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaAlternativa ? categoriaAlternativa._id : null } });
+        await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaAlternativa ? categoriaAlternativa._id : null } });
 
         // Cambiar el estado de la categoría a false
         const categoriaActualizada = await Categoria.findByIdAndUpdate(id, { estado: false }, { new: true });

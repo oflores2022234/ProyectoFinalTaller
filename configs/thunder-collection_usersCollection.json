@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "usersCollection",
-    "dateExported": "2024-03-06T06:17:32.976Z",
+    "dateExported": "2024-03-06T23:16:05.107Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "c6232c20-60aa-4bb4-9658-565292b18061",
-            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
+            "_id": "fa384192-42c1-4d87-8608-64e70c7ab2db",
+            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
             "containerId": "",
             "name": "usersPost",
             "url": "http://localhost:8080/shop/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-06T03:50:41.825Z",
-            "modified": "2024-03-06T04:21:54.850Z",
+            "created": "2024-03-06T20:32:01.919Z",
+            "modified": "2024-03-06T20:32:01.919Z",
             "headers": [],
             "params": [],
             "body": {
@@ -22,19 +22,18 @@
                 "raw": "{\n  \"nombre\": \"Alejandro\",\n  \"correo\": \"ayllescas05@gmail.com\",\n  \"password\": \"123123\",\n  \"role\": \"CLIENT_ROLE\"\n}",
                 "form": []
             },
-            "reqType": "post",
             "tests": []
         },
         {
-            "_id": "eaf3b732-fbcb-4eb3-92c4-017dd1ffe783",
-            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
+            "_id": "784216ad-bb0a-48ad-8e50-a8faaa0cf32a",
+            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
             "containerId": "",
             "name": "usersGet",
             "url": "http://localhost:8080/shop/v1/users?desde=0&limite=10",
             "method": "GET",
             "sortNum": 40000,
-            "created": "2024-03-06T03:50:41.826Z",
-            "modified": "2024-03-06T03:50:41.826Z",
+            "created": "2024-03-06T20:32:01.920Z",
+            "modified": "2024-03-06T20:32:01.920Z",
             "headers": [],
             "params": [
                 {
@@ -51,15 +50,15 @@
             "tests": []
         },
         {
-            "_id": "4f0d03bd-6de2-41d5-bc7f-ef37514e8aca",
-            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
+            "_id": "efb1f671-a5fa-4df9-a807-baf0c488bd7c",
+            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
             "containerId": "",
             "name": "usersPut",
             "url": "http://localhost:8080/shop/v1/users/65e64f967489309ea251981f",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-03-06T03:50:41.827Z",
-            "modified": "2024-03-06T03:50:41.827Z",
+            "created": "2024-03-06T20:32:01.921Z",
+            "modified": "2024-03-06T20:32:01.921Z",
             "headers": [],
             "params": [],
             "body": {
@@ -70,15 +69,15 @@
             "tests": []
         },
         {
-            "_id": "c00e9879-1355-4274-85fb-1ac2a3a1e5f8",
-            "colId": "2b8ab365-fe4f-4da5-a1c0-674dfb53c1df",
+            "_id": "5fa9e226-34d2-4358-a557-91f5d82e43cd",
+            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
             "containerId": "",
             "name": "usersDelete",
             "url": "http://localhost:8080/shop/v1/users/65e64f8ad45aaaec89187fac",
             "method": "DELETE",
             "sortNum": 60000,
-            "created": "2024-03-06T03:50:41.828Z",
-            "modified": "2024-03-06T03:50:41.828Z",
+            "created": "2024-03-06T20:32:01.922Z",
+            "modified": "2024-03-06T20:32:01.922Z",
             "headers": [
                 {
                     "name": "x-token",
