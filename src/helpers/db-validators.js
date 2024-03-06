@@ -33,6 +33,13 @@ export const existeCategoriaById = async (id = '') => {
     }
 }
 
+export const existeProductoById = async {id = ''} => {
+    const existeProductoBI = await Productos.findById(id);
+    if(!existeProductoBI){
+        throw new Error(`El id ${id} no existe`);
+    }
+}
+
 export const existeNombreProducto = async (nombre = '') => {
     const existeProducto = await Productos.findOne({nombre});
     if(existeProducto){
