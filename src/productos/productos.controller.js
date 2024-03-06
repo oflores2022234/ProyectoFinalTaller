@@ -1,5 +1,6 @@
 import Productos from './productos.model.js';
 import Categorias from '../categorias/categorias.model.js';
+import { request, response } from 'express';
 
 export const productosPost = async (req, res) => {
     const data = req.body;
@@ -16,7 +17,7 @@ export const productosPost = async (req, res) => {
             categoria:categoria._id
         });
 
-        await producto.save();
+        await producto.save();  
 
         categoria.productos.push(producto._id)
         await categoria.save();
@@ -32,3 +33,29 @@ export const productosPost = async (req, res) => {
         res.status(500).json({ error: 'Error, cannor add product'});
     }
 }
+
+export const productosGet = async (req, res) => {
+    const { limite = 10, desde = 0 } = req.query;
+
+    try {
+        const [total, productos] = await Promise.all([
+            Productos.countDocuments({ estado: true }),
+            Productos.find({ estado: true })
+                .populate('categoria', 'nombre') // Aquí cargamos el nombre de la categoría
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            productos
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Hubo un error al obtener los productos.' });
+    }
+};
+
+/*export const productoPut = (req, res = response) => {
+    const { id } =
+}*/
