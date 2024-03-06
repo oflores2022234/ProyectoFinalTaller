@@ -3,13 +3,16 @@ import { check } from "express-validator";
 
 import {
     productosPost,
-    productosGet
+    productosGet,
+    productoPut,
+    productoDelete
 } from "./productos.controller.js";
 
 import {
     existeNombreProducto,
     validarPrecio,
-    validarStock
+    validarStock,
+    existeProductoById
 } from "../helpers/db-validators.js"
 
 import { validarCampos } from "../middlewares/validar-campos.js"
@@ -32,6 +35,27 @@ router.post(
         check("stock").custom(validarStock),
         validarCampos   
     ], productosPost
+);
+
+router.put(
+    "/:id",
+    [
+        validarJWT,
+        check("id", "Id no valid").isMongoId(),
+        check("id").custom(existeProductoById),
+        validarCampos,
+    ], productoPut
+);
+
+router.delete(
+    "/:id",
+    [
+        validarJWT,
+        check("id", "No es un ID válido").isMongoId(),
+        check("id").custom(existeProductoById),
+        validarCampos,
+    ],
+    productoDelete
 );
 
 export default router;

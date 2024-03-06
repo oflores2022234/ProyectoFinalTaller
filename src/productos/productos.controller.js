@@ -1,6 +1,7 @@
 import Productos from './productos.model.js';
 import Categorias from '../categorias/categorias.model.js';
 import { request, response } from 'express';
+import mongoose from 'mongoose';
 
 export const productosPost = async (req, res) => {
     const data = req.body;
@@ -35,7 +36,7 @@ export const productosPost = async (req, res) => {
 }
 
 export const productosGet = async (req, res) => {
-    const { limite = 10, desde = 0 } = req.query;
+    const { limite, desde} = req.query;
 
     try {
         const [total, productos] = await Promise.all([
@@ -56,6 +57,49 @@ export const productosGet = async (req, res) => {
     }
 };
 
-/*export const productoPut = (req, res = response) => {
-    const { id } =
-}*/
+export const productoPut = async (req, res = response) => {
+    const { id } = req.params;
+    const {_id, ...resto} = req.body;
+
+    // Verificar si el ID es un ObjectID válido
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({ msg: 'ID de producto no válido' });
+    }
+
+    try {
+        // Verificar si el campo 'categoria' es un ObjectID válido
+        if (resto.categoria && !mongoose.Types.ObjectId.isValid(resto.categoria)) {
+            // Si el campo 'categoria' no es un ObjectID válido, buscar la categoría por su nombre
+            const categoria = await Categorias.findOne({ nombre: resto.categoria });
+
+            if (!categoria) {
+                return res.status(404).json({ msg: 'Categoría no encontrada' });
+            }
+
+            resto.categoria = categoria._id; // Asignar el ID de la categoría al producto actualizado
+        }
+
+        const producto = await Productos.findByIdAndUpdate(id, resto, { new: true });
+
+        if (!producto) {
+            return res.status(404).json({ msg: 'Producto no encontrado' });
+        }
+
+        res.status(200).json({
+            msg: 'Producto actualizado',
+            producto
+        });
+
+    } catch (error) {
+        console.error('Error al actualizar el producto:', error);
+        res.status(500).json({ msg: 'Error al actualizar el producto' });
+    }
+}
+
+export const productoDelete = async (req, res) => {
+    const {id} = req.params;
+
+    const producto = await Productos.findByIdAndUpdate(id, { estado: false});
+
+    res.status(200).json({msg:'producto a eliminar', producto });
+}
