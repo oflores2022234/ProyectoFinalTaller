@@ -1,7 +1,7 @@
 import mongoose, { mongo } from "mongoose";
 
 const ProductoSchema = mongoose.Schema({
-    nomnre: {
+    nombre: {
         type: String,
         required: [true, "The name of the product is obligatory"],
     },

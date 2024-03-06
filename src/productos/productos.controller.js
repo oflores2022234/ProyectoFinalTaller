@@ -5,7 +5,7 @@ export const productosPost = async (req, res) => {
     const data = req.body;
 
     try {
-        const categoria = await Categorias.findOne({nombre: data.cate});
+        const categoria = await Categorias.findOne({nombre: data.categoria});
 
         if(!categoria){
             return res.status(404).json({msg: 'Categoria no encontrada'});

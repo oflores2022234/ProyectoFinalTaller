@@ -22,6 +22,7 @@ router.get("/", categoriasGet);
 router.post(
     "/",
     [
+        validarJWT,
         check("nombre").custom(existenteCategoria),
         check('descripcion', "The description is obligatory").not().isEmpty(),
         validarCampos,
@@ -30,6 +31,7 @@ router.post(
 router.put(
     "/:id",
     [
+        validarJWT,
         check("id", "Id no valid").isMongoId(),
         check("id").custom(existeCategoriaById),
         validarCampos,

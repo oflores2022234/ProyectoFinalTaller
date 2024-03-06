@@ -5,9 +5,12 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js';
+import User from '../src/users/user.model.js'
+import bcryptjs from 'bcryptjs'
 import userRoutes from '../src/users/user.routes.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import categoriaRoutes from '../src/categorias/categorias.routes.js';
+import productoRoutes from '../src/productos/productos.routes.js';
 
 
 class Server{
@@ -17,6 +20,7 @@ class Server{
         this.authPath = '/shop/v1/auth'
         this.usuarioPath = '/shop/v1/users'
         this.categoriaPath = '/shop/v1/categoria'
+        this.productoPath = '/shop/v1/producto'
 
         this.middlewares();
         this.conectarDB();
@@ -25,7 +29,19 @@ class Server{
 
     async conectarDB(){
         await dbConnection();
+        const lengthUsers = await User.countDocuments();
+        if(lengthUsers > 0) return;
+
+        const salt = bcryptjs.genSaltSync();
+        const password = bcryptjs.hashSync('123456', salt);
+
+        const adminUser = new User(
+            {nombre: "User Admin", correo: "admin@kinal.edu.gt", password, role: "ADMIN_ROLE"}
+        )
+
+        adminUser.save();
     }
+    
 
     middlewares(){
         this.app.use(express.urlencoded({extended: false}));
@@ -39,6 +55,7 @@ class Server{
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.usuarioPath, userRoutes);
         this.app.use(this.categoriaPath, categoriaRoutes);
+        this.app.use(this.productoPath, productoRoutes)
     }
 
     listen(){

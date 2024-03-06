@@ -33,11 +33,41 @@ export const existeCategoriaById = async (id = '') => {
     }
 }
 
-export const existeNombreProeudto = async (nombre = '') => {
+export const existeNombreProducto = async (nombre = '') => {
     const existeProducto = await Productos.findOne({nombre});
     if(existeProducto){
         throw new Error(`El nombre ${nombre} ya fue registrado`);
     }
 }
 
-//export const 
+export const validarPrecio = async (precio = "") => {
+    if(precio === null || isNaN(precio) || precio < 0){
+        throw new Error('The price must be a valid number greater than 0');
+    }
+
+    if(precio < 0){
+        throw new Error('The price cannot be negative');
+    }
+
+    if(precio == 0){
+        throw new Error('The price cannot be 0')
+    }
+}
+
+export const validarStock = async (stock = "") => {
+    if(stock === null || isNaN(stock) || stock < 0){
+        throw new Error('The stock must be a valid number greater than 0');
+    }
+
+    if(!Number.isInteger(stock)){
+        throw new Error('The stock must be a whole number');
+    }
+
+    if(stock < 0){
+        throw new Error('The stock cannot be a negative');
+    }
+
+    if(stock == 0){
+        throw new Error('The stock cannot be 0')
+    }
+}
