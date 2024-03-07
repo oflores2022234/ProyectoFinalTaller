@@ -116,5 +116,25 @@ export const controlInventario = async (req, res) => {
 }
 
 export const productosAgotados = async (req, res) => {
-    
-}
+    try {
+        const productosAgotados = await Productos.find({ stock: 0 }, 'nombre descripcion stock');
+        res.status(200).json(productosAgotados);
+    } catch (error) {
+        console.error('Error al obtener productos agotados:', error);
+        res.status(500).json({ error: 'Error al obtener productos agotados' });
+    }
+};
+
+
+export const buscarProductosPorNombre = async (req, res) => {
+    const { nombre } = req.query;
+
+    try {
+        const productos = await Productos.find({ nombre: { $regex: new RegExp(nombre, 'i') } });
+
+        res.status(200).json(productos);
+    } catch (error) {
+        console.error('Error al buscar productos por nombre:', error);
+        res.status(500).json({ error: 'Error al buscar productos por nombre' });
+    }
+};
