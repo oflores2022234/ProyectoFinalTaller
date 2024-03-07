@@ -74,7 +74,7 @@ export const validarStock = async (stock = "") => {
         throw new Error('The stock cannot be a negative');
     }
 
-    if(stock == 0){
+    /*if(stock == 0){
         throw new Error('The stock cannot be 0')
-    }
+    }*/
 }

@@ -5,7 +5,8 @@ import {
     productosPost,
     productosGet,
     productoPut,
-    productoDelete
+    productoDelete,
+    controlInventario
 } from "./productos.controller.js";
 
 import {
@@ -20,7 +21,8 @@ import { validarJWT } from "../middlewares/validar-jwt.js"
 
 const router = Router();
 
-router.get("/", productosGet)
+router.get("/", productosGet);
+router.get("/control-inventario", controlInventario);
 
 router.post(
     "/",
