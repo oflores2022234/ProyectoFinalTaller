@@ -7,7 +7,8 @@ import {
     productoPut,
     productoDelete,
     controlInventario,
-    productosAgotados
+    productosAgotados,
+    buscarProductosPorNombre
 } from "./productos.controller.js";
 
 import {
@@ -25,6 +26,7 @@ const router = Router();
 router.get("/", productosGet);
 router.get("/control-inventario", controlInventario);
 router.get("/productos-agotados", productosAgotados);
+router.get("/buscar", buscarProductosPorNombre);
 
 router.post(
     "/",
