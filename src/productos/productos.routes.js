@@ -8,7 +8,8 @@ import {
     productoDelete,
     controlInventario,
     productosAgotados,
-    buscarProductosPorNombre
+    buscarProductosPorNombre,
+    catalogoProductosPorCategoria
 } from "./productos.controller.js";
 
 import {
@@ -27,6 +28,7 @@ router.get("/", productosGet);
 router.get("/control-inventario", controlInventario);
 router.get("/productos-agotados", productosAgotados);
 router.get("/buscar", buscarProductosPorNombre);
+router.get("/categoria/:categoria", catalogoProductosPorCategoria);
 
 router.post(
     "/",

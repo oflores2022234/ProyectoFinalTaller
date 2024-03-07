@@ -139,4 +139,25 @@ export const buscarProductosPorNombre = async (req, res) => {
     }
 };
 
+export const catalogoProductosPorCategoria = async (req, res) => {
+    const { categoria } = req.params;
+
+    try {
+        // Buscar la categoría por su nombre
+        const categoriaEncontrada = await Categorias.findOne({ nombre: categoria });
+
+        if (!categoriaEncontrada) {
+            return res.status(404).json({ error: 'Categoría no encontrada' });
+        }
+
+        // Obtener solo los productos asociados a la categoría encontrada
+        const productos = await Productos.find({ categoria: categoriaEncontrada._id });
+
+        res.status(200).json(productos);
+    } catch (error) {
+        console.error('Error al obtener el catálogo de productos por categoría:', error);
+        res.status(500).json({ error: 'Error al obtener el catálogo de productos por categoría' });
+    }
+};
+
 
