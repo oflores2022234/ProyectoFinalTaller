@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "authCollection",
-    "dateExported": "2024-03-06T23:15:51.219Z",
+    "dateExported": "2024-03-07T06:02:08.586Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "7bf4c355-3aee-494f-a667-0e2bd186dd06",
-            "colId": "b93f4f83-925b-4375-a2c9-73d52a5332a9",
+            "_id": "ae8f0d28-043e-4e4b-85a8-39ba77a6b61c",
+            "colId": "54347f35-673d-42b6-bce1-ea23cfb2dcef",
             "containerId": "",
             "name": "login",
             "url": "http://localhost:8080/shop/v1/auth/login",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-06T20:32:01.873Z",
-            "modified": "2024-03-06T20:32:01.873Z",
+            "created": "2024-03-07T03:14:43.191Z",
+            "modified": "2024-03-07T03:14:43.191Z",
             "headers": [],
             "params": [],
             "body": {

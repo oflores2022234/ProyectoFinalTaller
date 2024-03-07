@@ -1,0 +1,60 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "productosCollection cliente",
+    "dateExported": "2024-03-07T06:02:36.900Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8b1abff8-453e-428a-bed9-529c3a512592",
+            "colId": "a6e4ae42-6729-4a33-bfc8-e28eb9448d4d",
+            "containerId": "",
+            "name": "buscarProductoByName",
+            "url": "http://localhost:8080/shop/v1/producto/buscar?nombre=Tv",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-07T04:42:31.267Z",
+            "modified": "2024-03-07T04:45:29.349Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "nombre",
+                    "value": "Tv",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "137d38bb-07bc-4763-a813-c0da74f1f043",
+            "colId": "a6e4ae42-6729-4a33-bfc8-e28eb9448d4d",
+            "containerId": "",
+            "name": "buscarProductosPorCategoria",
+            "url": "http://localhost:8080/shop/v1/producto/categoria/Casa",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-07T04:57:06.016Z",
+            "modified": "2024-03-07T05:12:23.819Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "e5dc3482-070c-41dd-b090-b675a764b216",
+            "colId": "a6e4ae42-6729-4a33-bfc8-e28eb9448d4d",
+            "containerId": "",
+            "name": "catalogoDeCategorias",
+            "url": "http://localhost:8080/shop/v1/categoria",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-07T05:14:03.188Z",
+            "modified": "2024-03-07T05:14:20.005Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}

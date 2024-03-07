@@ -1,0 +1,120 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "productosCollection admin",
+    "dateExported": "2024-03-07T06:02:25.170Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "df70422a-3ded-4482-9978-99ac2b33e255",
+            "colId": "de186e67-642b-4940-99b2-21a846be8871",
+            "containerId": "",
+            "name": "productos post",
+            "url": "http://localhost:8080/shop/v1/producto",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-07T03:14:43.258Z",
+            "modified": "2024-03-07T05:12:17.401Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZWU2NWZkOWUzMjk3NzE5NGZhMjIiLCJpYXQiOjE3MDk3ODY2MjcsImV4cCI6MTcwOTc5MDIyN30.QEZ9EgZWRCGFShiuRcNKNvFialPkk6XI5IaNwIO8XpU"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Jabon zote\",\n  \"descripcion\": \"jabon zote para todo uso\",\n  \"categoria\": \"Casa\",\n  \"precio\": 14500.50,\n  \"stock\": 0\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "effa1131-db35-4a48-be51-db042185b9c4",
+            "colId": "de186e67-642b-4940-99b2-21a846be8871",
+            "containerId": "",
+            "name": "productos get",
+            "url": "http://localhost:8080/shop/v1/producto",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-07T03:14:43.259Z",
+            "modified": "2024-03-07T03:14:43.259Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9b57b5f6-6154-4307-aad4-153833fad70a",
+            "colId": "de186e67-642b-4940-99b2-21a846be8871",
+            "containerId": "",
+            "name": "productos put",
+            "url": "http://localhost:8080/shop/v1/producto/65e8d384dea5cd27060052a5",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-07T03:14:43.260Z",
+            "modified": "2024-03-07T03:14:43.260Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4ZDM1MGRlYTVjZDI3MDYwMDUyOWIiLCJpYXQiOjE3MDk3NTcyNzcsImV4cCI6MTcwOTc2MDg3N30.neM5DWu8WPVHmOJDvOziDdkM7pU4imYhpU9UZ7SuTlM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"iPhone 1500 pro max ultra super\",\n  \"descripcion\": \"1508gb de memoria ram y 512gb de almacenamiento\",\n  \"categoria\": \"Celulares\",\n  \"precio\": 14500.50,\n  \"stock\": 10\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "51d0bf2f-39bd-495f-a74b-23e81365d47d",
+            "colId": "de186e67-642b-4940-99b2-21a846be8871",
+            "containerId": "",
+            "name": "products delete",
+            "url": "http://localhost:8080/shop/v1/producto/65e7eabaf497f457c954de90",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-07T03:14:43.261Z",
+            "modified": "2024-03-07T03:14:43.261Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZWU2NWZkOWUzMjk3NzE5NGZhMjIiLCJpYXQiOjE3MDk3MDQyNjgsImV4cCI6MTcwOTcwNzg2OH0.807XTUpuaT3FByDCvrX5jsqUtxMM_Zst_qboik3PnIk"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "67061027-468b-4ea8-b383-f18abfdcb876",
+            "colId": "de186e67-642b-4940-99b2-21a846be8871",
+            "containerId": "",
+            "name": "control Inventario",
+            "url": "http://localhost:8080/shop/v1/producto/control-inventario",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-07T03:46:29.028Z",
+            "modified": "2024-03-07T03:46:46.104Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "2cacf4a7-f979-4645-be06-50e8c8784e79",
+            "colId": "de186e67-642b-4940-99b2-21a846be8871",
+            "containerId": "",
+            "name": "productos agotados",
+            "url": "http://localhost:8080/shop/v1/producto/productos-agotados",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-07T04:01:50.572Z",
+            "modified": "2024-03-07T04:02:07.975Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

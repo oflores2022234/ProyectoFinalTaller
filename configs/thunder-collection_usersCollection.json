@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "usersCollection",
-    "dateExported": "2024-03-06T23:16:05.107Z",
+    "dateExported": "2024-03-07T06:02:32.752Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "fa384192-42c1-4d87-8608-64e70c7ab2db",
-            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
+            "_id": "0fad0b12-d06a-470c-bfd5-b0b2eb6f5a67",
+            "colId": "4d223f1a-59c8-494c-8be2-3306cce20668",
             "containerId": "",
             "name": "usersPost",
             "url": "http://localhost:8080/shop/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-06T20:32:01.919Z",
-            "modified": "2024-03-06T20:32:01.919Z",
+            "created": "2024-03-07T03:14:43.287Z",
+            "modified": "2024-03-07T03:14:43.287Z",
             "headers": [],
             "params": [],
             "body": {
@@ -25,15 +25,15 @@
             "tests": []
         },
         {
-            "_id": "784216ad-bb0a-48ad-8e50-a8faaa0cf32a",
-            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
+            "_id": "0bf50af2-5c15-4d16-bc3c-0c1898bece64",
+            "colId": "4d223f1a-59c8-494c-8be2-3306cce20668",
             "containerId": "",
             "name": "usersGet",
             "url": "http://localhost:8080/shop/v1/users?desde=0&limite=10",
             "method": "GET",
             "sortNum": 40000,
-            "created": "2024-03-06T20:32:01.920Z",
-            "modified": "2024-03-06T20:32:01.920Z",
+            "created": "2024-03-07T03:14:43.288Z",
+            "modified": "2024-03-07T03:14:43.288Z",
             "headers": [],
             "params": [
                 {
@@ -50,15 +50,15 @@
             "tests": []
         },
         {
-            "_id": "efb1f671-a5fa-4df9-a807-baf0c488bd7c",
-            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
+            "_id": "f56efdec-e6d8-49fc-bce1-52a591472cfc",
+            "colId": "4d223f1a-59c8-494c-8be2-3306cce20668",
             "containerId": "",
             "name": "usersPut",
             "url": "http://localhost:8080/shop/v1/users/65e64f967489309ea251981f",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-03-06T20:32:01.921Z",
-            "modified": "2024-03-06T20:32:01.921Z",
+            "created": "2024-03-07T03:14:43.289Z",
+            "modified": "2024-03-07T03:14:43.289Z",
             "headers": [],
             "params": [],
             "body": {
@@ -69,15 +69,15 @@
             "tests": []
         },
         {
-            "_id": "5fa9e226-34d2-4358-a557-91f5d82e43cd",
-            "colId": "a42c332f-459c-4b55-941a-037a0ca27743",
+            "_id": "60c69cc7-2e55-4949-ac3b-e21c06eb5fd8",
+            "colId": "4d223f1a-59c8-494c-8be2-3306cce20668",
             "containerId": "",
             "name": "usersDelete",
             "url": "http://localhost:8080/shop/v1/users/65e64f8ad45aaaec89187fac",
             "method": "DELETE",
             "sortNum": 60000,
-            "created": "2024-03-06T20:32:01.922Z",
-            "modified": "2024-03-06T20:32:01.922Z",
+            "created": "2024-03-07T03:14:43.290Z",
+            "modified": "2024-03-07T03:14:43.290Z",
             "headers": [
                 {
                     "name": "x-token",
