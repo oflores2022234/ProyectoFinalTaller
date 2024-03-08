@@ -15,6 +15,12 @@ const CarritoSchema = mongoose.Schema({
             type: Number,
             required: true
         },
+        precio: {
+            type: Number
+        },
+        subtotal: {
+            type: Number
+        }
     }]
 });
 

@@ -1,0 +1,80 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "carritoCollection",
+    "dateExported": "2024-03-08T07:12:52.829Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f8fd02ae-ec4f-4f85-bb59-0b6e687c23d4",
+            "colId": "596cd86c-376e-42e4-a3c7-2b0992e60650",
+            "containerId": "",
+            "name": "carritoPost",
+            "url": "http://localhost:8080/shop/v1/carrito",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-08T03:50:29.342Z",
+            "modified": "2024-03-08T06:54:15.505Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhOGVkNGIwNjc4NDA5ZTUwYmRhMWMiLCJpYXQiOjE3MDk4ODA2ODcsImV4cCI6MTcwOTg4NDI4N30.22VStMrkVkbLAHKM2uASNtxBs6NcHE_rxA2I7tbZplg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"nombreProducto\": \"Zambo\",\n    \"cantidad\": 1\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "f7d0c5e0-b6d6-48c6-b03b-e8abf846f271",
+            "colId": "596cd86c-376e-42e4-a3c7-2b0992e60650",
+            "containerId": "",
+            "name": "getCarrito",
+            "url": "http://localhost:8080/shop/v1/carrito",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-08T04:05:25.969Z",
+            "modified": "2024-03-08T06:51:40.724Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhOGVkNGIwNjc4NDA5ZTUwYmRhMWMiLCJpYXQiOjE3MDk4ODA2ODcsImV4cCI6MTcwOTg4NDI4N30.22VStMrkVkbLAHKM2uASNtxBs6NcHE_rxA2I7tbZplg"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "9a1851f7-7d0a-4e70-bb92-b2b858afd0c8",
+            "colId": "596cd86c-376e-42e4-a3c7-2b0992e60650",
+            "containerId": "",
+            "name": "deleteProductoCarrito",
+            "url": "http://localhost:8080/shop/v1/carrito?nombreProducto=Zambo",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-08T04:35:01.231Z",
+            "modified": "2024-03-08T06:39:41.923Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhOGVkNGIwNjc4NDA5ZTUwYmRhMWMiLCJpYXQiOjE3MDk4NzY2OTQsImV4cCI6MTcwOTg4MDI5NH0.maikd0NT_M6r_bescHsT241cVG4nncZCqxt4YkZu5n4"
+                }
+            ],
+            "params": [
+                {
+                    "name": "nombreProducto",
+                    "value": "Zambo",
+                    "isPath": false
+                }
+            ],
+            "reqType": "del",
+            "tests": []
+        }
+    ]
+}

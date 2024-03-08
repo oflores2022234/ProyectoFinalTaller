@@ -22,6 +22,10 @@ export const carritoPost = async (req, res) => {
             return res.status(400).json({ msg: 'Stock insuficiente' });
         }
 
+        // Calcular el subtotal y el precio del producto
+        const precio = producto.precio;
+        const subtotal = cantidad * precio;
+
         const carritoExistente = await Carrito.findOne({ usuario });
 
         if (carritoExistente) {
@@ -29,8 +33,9 @@ export const carritoPost = async (req, res) => {
 
             if (productoExistenteIndex !== -1) {
                 carritoExistente.productos[productoExistenteIndex].cantidad += cantidad;
+                carritoExistente.productos[productoExistenteIndex].subtotal += subtotal;
             } else {
-                carritoExistente.productos.push({ nombreProducto, cantidad });
+                carritoExistente.productos.push({ nombreProducto, cantidad, precio, subtotal });
             }
 
             await carritoExistente.save();
@@ -38,20 +43,19 @@ export const carritoPost = async (req, res) => {
         } else {
             const nuevoCarrito = new Carrito({
                 usuario,
-                productos: [{ nombreProducto, cantidad }]
+                productos: [{ nombreProducto, cantidad, precio, subtotal }]
             });
 
             await nuevoCarrito.save();
         }
-
 
         producto.stock -= cantidad;
         await producto.save();
 
         return res.status(200).json({ mensaje: 'Producto agregado al carrito' });
     } catch (error) {
-        console.log(`Error al agregar producto al carrito: `,error);
-        res.status(500).json({msg: 'Error al agregar producto al carrito'});
+        console.error('Error al agregar producto al carrito:', error);
+        res.status(500).json({ msg: 'Error al agregar producto al carrito' });
     }
 }
 
@@ -59,21 +63,30 @@ export const getCarrito = async (req, res) => {
     const usuario = req.usuario;
 
     try {
-
         const carrito = await Carrito.findOne({ usuario });
 
         if (!carrito) {
-        return res.status(404).json({ msg: 'No se encontró ningún producto en el carrito' });
+            return res.status(404).json({ msg: 'No se encontró ningún producto en el carrito' });
         }
 
+        // Calcular el subtotal de cada producto y el precio total del carrito
+        let precioTotal = 0;
+        const productosEnCarrito = carrito.productos.map(producto => {
+            const subtotal = producto.precio * producto.cantidad;
+            precioTotal += subtotal;
 
-        const productosEnCarrito = carrito.productos.map(producto => ({
-        usuario: usuario.nombre,
-        producto: producto.nombreProducto,
-        cantidad: producto.cantidad
-        }));
+            return {
+                usuario: usuario.nombre,
+                producto: producto.nombreProducto,
+                cantidad: producto.cantidad,
+                precio: producto.precio,
+                subtotal: subtotal
+            };
+        });
 
-        return res.status(200).json({ productosEnCarrito });
+        const carritoId = carrito._id;
+
+        return res.status(200).json({ carritoId, productosEnCarrito, precioTotal });
     } catch (error) {
         console.error('Error al obtener los productos en el carrito:', error);
         res.status(500).json({ error: 'Error al obtener los productos en el carrito' });
