@@ -54,3 +54,28 @@ export const carritoPost = async (req, res) => {
         res.status(500).json({msg: 'Error al agregar producto al carrito'});
     }
 }
+
+export const getCarrito = async (req, res) => {
+    const usuario = req.usuario;
+
+    try {
+
+        const carrito = await Carrito.findOne({ usuario });
+
+        if (!carrito) {
+        return res.status(404).json({ mensaje: 'No se encontró ningún producto en el carrito' });
+        }
+
+
+        const productosEnCarrito = carrito.productos.map(producto => ({
+        usuario: usuario.nombre,
+        producto: producto.nombreProducto,
+        cantidad: producto.cantidad
+        }));
+
+        return res.status(200).json({ productosEnCarrito });
+    } catch (error) {
+        console.error('Error al obtener los productos en el carrito:', error);
+        res.status(500).json({ error: 'Error al obtener los productos en el carrito' });
+    }
+};
