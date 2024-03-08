@@ -1,10 +1,14 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { 
-    carritoPost } from "./carrito.controller.js";
+    carritoPost,
+    getCarrito
+} from "./carrito.controller.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
 const router = Router();
+
+router.get("/", validarJWT, getCarrito);
 
 router.post(
     "/",
@@ -15,5 +19,7 @@ router.post(
     ],
     carritoPost
 );
+
+
 
 export default router;
