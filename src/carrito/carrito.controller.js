@@ -63,7 +63,7 @@ export const getCarrito = async (req, res) => {
         const carrito = await Carrito.findOne({ usuario });
 
         if (!carrito) {
-        return res.status(404).json({ mensaje: 'No se encontró ningún producto en el carrito' });
+        return res.status(404).json({ msg: 'No se encontró ningún producto en el carrito' });
         }
 
 
@@ -79,3 +79,39 @@ export const getCarrito = async (req, res) => {
         res.status(500).json({ error: 'Error al obtener los productos en el carrito' });
     }
 };
+
+export const deleteCarrito = async (req, res) => {
+    const { nombreProducto } = req.query;
+    const usuario = req.usuario;
+
+    try {
+        const carritoExistente = await Carrito.findOne({ usuario });
+
+        if (!carritoExistente) {
+            return res.status(404).json({ msg: 'Carrito no encontrado para este usuario' });
+        }
+
+        const productoIndex = carritoExistente.productos.findIndex(item => item.nombreProducto === nombreProducto);
+
+        if (productoIndex === -1) {
+            return res.status(404).json({ msg: 'Producto no encontrado en el carrito' });
+        }
+
+        const cantidad = carritoExistente.productos[productoIndex].cantidad;
+
+        carritoExistente.productos.splice(productoIndex, 1);
+
+        await carritoExistente.save();
+
+        await Producto.findOneAndUpdate(
+            { nombre: nombreProducto },
+            { $inc: { stock: cantidad } }
+        );
+
+        return res.status(200).json({ msg: 'Producto eliminado del carrito' });
+        
+    } catch (error) {
+        console.error('Error al eliminar producto del carrito', error);
+        res.status(500).json({ msg: 'Error al eliminar producto del carrito'});
+    }
+}
