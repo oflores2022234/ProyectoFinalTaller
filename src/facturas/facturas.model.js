@@ -21,4 +21,5 @@ const FacturaSchema = mongoose.Schema({
     }
 });
 
+
 export default mongoose.model("Factura", FacturaSchema);    
