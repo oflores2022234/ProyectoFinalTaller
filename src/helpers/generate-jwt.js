@@ -7,7 +7,7 @@ export const generarJWT = (uid = ' ') => {
             payload,
             process.env.SECRETORPRIVATEKEY,
             {
-                expiresIn: '1h'
+                expiresIn: '500h'
             },
             (err, token) => {
                 err ? (console.log(err),reject('Canot generate token')) : resolve(token);

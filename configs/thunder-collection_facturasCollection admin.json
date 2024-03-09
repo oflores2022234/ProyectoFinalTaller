@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "facturasCollection admin",
-    "dateExported": "2024-03-09T05:49:45.764Z",
+    "dateExported": "2024-03-14T07:01:15.213Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,17 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-09T03:28:37.965Z",
-            "modified": "2024-03-09T05:41:21.086Z",
+            "modified": "2024-03-14T04:43:45.147Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZWU2NWZkOWUzMjk3NzE5NGZhMjIiLCJpYXQiOjE3MDk5NjI4NjYsImV4cCI6MTcwOTk2NjQ2Nn0.BsWsjpN2t-BH7C5U1aiaC3WbPpFsZcV0jGmcYK7ObLI"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWYyNzkwNDYzZDkzZTA0NjlmZjMzMGUiLCJpYXQiOjE3MTAzOTExNjUsImV4cCI6MTcxMDM5NDc2NX0.qXeXKGHAiDLrxuAKB_7Ox1fLh1G2XdvbdlTIGE-Kem4"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"usuario\": \"65ebd92c22499fa70ca34b43\"\n}",
+                "raw": "{\n    \"idCarrito\": \"65f27bcca197c3087ec59325\"\n}",
                 "form": []
             },
             "reqType": "post",
@@ -39,11 +39,11 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-09T03:47:21.630Z",
-            "modified": "2024-03-09T04:43:55.032Z",
+            "modified": "2024-03-14T06:14:20.988Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZDkyYzIyNDk5ZmE3MGNhMzRiNDMiLCJpYXQiOjE3MDk5NTk0MDgsImV4cCI6MTcwOTk2MzAwOH0.NQJltETTSPPQFFNQPVa6M5Ra5nUdglDaRkbVJSUiG8s"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWYyNzkwNDYzZDkzZTA0NjlmZjMzMGUiLCJpYXQiOjE3MTAzOTY4NTEsImV4cCI6MTcxMjE5Njg1MX0.8uI_EKm7AmxfrHx-nniETh4WLwwHMvUgnGyn_u7QhBQ"
                 }
             ],
             "params": [],
@@ -55,15 +55,15 @@
             "colId": "b0b271de-1ea2-486f-90e8-d46f85865d91",
             "containerId": "",
             "name": "verFacturaDetallada",
-            "url": "http://localhost:8080/shop/v1/factura/65ebeadbaff399095ca2d7ff",
+            "url": "http://localhost:8080/shop/v1/factura/65f27dcb4eaaef5a739e34f9",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-03-09T03:56:14.039Z",
-            "modified": "2024-03-09T04:56:35.496Z",
+            "modified": "2024-03-14T06:14:53.605Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZDkyYzIyNDk5ZmE3MGNhMzRiNDMiLCJpYXQiOjE3MDk5NjAxODUsImV4cCI6MTcwOTk2Mzc4NX0.mN9dSUCqn0ZrPM7XENViRxt2k67CGm5FBtsahsqgFK4"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWYyNzkwNDYzZDkzZTA0NjlmZjMzMGUiLCJpYXQiOjE3MTAzOTY4NTEsImV4cCI6MTcxMjE5Njg1MX0.8uI_EKm7AmxfrHx-nniETh4WLwwHMvUgnGyn_u7QhBQ"
                 }
             ],
             "params": [],

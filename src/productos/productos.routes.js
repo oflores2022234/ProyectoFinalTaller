@@ -9,7 +9,8 @@ import {
     controlInventario,
     productosAgotados,
     buscarProductosPorNombre,
-    catalogoProductosPorCategoria
+    catalogoProductosPorCategoria,
+    modificarStockProducto
 } from "./productos.controller.js";
 
 import {
@@ -27,10 +28,10 @@ import { esCliente } from "../middlewares/verificar-role.js";
 const router = Router();
 
 router.get("/", productosGet);
-router.get("/control-inventario", esAdmin, controlInventario);
-router.get("/productos-agotados", esAdmin, productosAgotados);
-router.get("/buscar", esCliente, buscarProductosPorNombre);
-router.get("/categoria/:categoria", esCliente, catalogoProductosPorCategoria);
+router.get("/control-inventario", validarJWT,esAdmin, controlInventario);
+router.get("/productos-agotados", validarJWT,esAdmin, productosAgotados);
+router.get("/buscar", validarJWT,esCliente ,buscarProductosPorNombre);
+router.get("/categoria/:categoria", validarJWT,esCliente, catalogoProductosPorCategoria);
 
 router.post(
     "/",
@@ -58,6 +59,8 @@ router.put(
         validarCampos,
     ], productoPut
 );
+
+router.put('/:productoId', modificarStockProducto);
 
 router.delete(
     "/:id",

@@ -22,7 +22,7 @@ export const carritoPost = async (req, res) => {
             return res.status(400).json({ msg: 'Stock insuficiente' });
         }
 
-        // Calcular el subtotal y el precio del producto
+
         const precio = producto.precio;
         const subtotal = cantidad * precio;
 
@@ -69,7 +69,7 @@ export const getCarrito = async (req, res) => {
             return res.status(404).json({ msg: 'No se encontró ningún producto en el carrito' });
         }
 
-        // Calcular el subtotal de cada producto y el precio total del carrito
+
         let precioTotal = 0;
         const productosEnCarrito = carrito.productos.map(producto => {
             const subtotal = producto.precio * producto.cantidad;

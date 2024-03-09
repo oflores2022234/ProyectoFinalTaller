@@ -1,7 +1,7 @@
 export const esAdmin = (req, res, next) => {
-    const usuario = req.usuario;
+    const user = req.usuario;
 
-    if(usuario.role === "ADMIN_ROLE") return next();
+    if(user.role === "ADMIN_ROLE") return next();
 
     return res.status(400).json({
         msg: "No tienes acceso, solo Administradores"

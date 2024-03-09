@@ -1,0 +1,29 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Productos más vendidos",
+    "dateExported": "2024-03-14T07:01:31.293Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8cec6724-856c-4553-990b-74cdc43f20ed",
+            "colId": "92dae6fd-69ca-48d5-9233-a38a68fcd31f",
+            "containerId": "",
+            "name": "ProductosMasVendidos",
+            "url": "http://localhost:8080/shop/v1/factura/productos-mas-vendidos",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-14T05:49:16.324Z",
+            "modified": "2024-03-14T05:56:18.410Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWYyNzkwNDYzZDkzZTA0NjlmZjMzMGUiLCJpYXQiOjE3MTAzOTUzOTEsImV4cCI6MTcxMDM5ODk5MX0.WwFpWGfziS6-Oi8w4-stvvyMhJJdCvTpomXPAAilV1c"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}

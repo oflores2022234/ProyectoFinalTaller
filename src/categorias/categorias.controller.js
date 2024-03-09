@@ -36,7 +36,7 @@ export const categoriasPut = async (req, res = response) => {
 
     try {
         const categoriaActualizada = await Categoria.findByIdAndUpdate(id, resto, { new: true });
-        //esta usamos el update may, 
+
         await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaActualizada._id } });
 
         res.status(200).json({
@@ -53,19 +53,22 @@ export const categoriasDelete = async (req, res) => {
     const { id } = req.params;
 
     try {
-        // Buscar la categoría que se va a eliminar
+
         const categoria = await Categoria.findById(id);
         if (!categoria) {
             return res.status(404).json({ msg: "Categoría no encontrada" });
         }
 
-        // Buscar la categoría alternativa
-        const categoriaAlternativa = await Categoria.findOne({ nombre: "Tecnología" }); // Aquí debes especificar el nombre de la categoría alternativa
 
-        // Actualizar los productos relacionados asignándoles la categoría alternativa
-        await Producto.updateMany({ idCategoria: id }, { $set: { idCategoria: categoriaAlternativa ? categoriaAlternativa._id : null } });
+        const categoriaAlternativa = await Categoria.findOne({ nombre: "Camisas" });
+        if (!categoriaAlternativa) {
+            return res.status(404).json({ msg: "No se encontró una categoría alternativa válida" });
+        }
 
-        // Cambiar el estado de la categoría a false
+
+        await Producto.updateMany({ categoria: id }, { $set: { categoria: categoriaAlternativa._id } });
+
+
         const categoriaActualizada = await Categoria.findByIdAndUpdate(id, { estado: false }, { new: true });
 
         res.status(200).json({ msg: "Categoría eliminada correctamente", categoria: categoriaActualizada });

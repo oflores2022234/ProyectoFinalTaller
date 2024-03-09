@@ -67,16 +67,16 @@ export const productoPut = async (req, res = response) => {
     }
 
     try {
-        // Verificar si el campo 'categoria' es un ObjectID válido
+        
         if (resto.categoria && !mongoose.Types.ObjectId.isValid(resto.categoria)) {
-            // Si el campo 'categoria' no es un ObjectID válido, buscar la categoría por su nombre
+            
             const categoria = await Categorias.findOne({ nombre: resto.categoria });
 
             if (!categoria) {
                 return res.status(404).json({ msg: 'Categoría no encontrada' });
             }
 
-            resto.categoria = categoria._id; // Asignar el ID de la categoría al producto actualizado
+            resto.categoria = categoria._id; 
         }
 
         const producto = await Productos.findByIdAndUpdate(id, resto, { new: true });
@@ -143,14 +143,14 @@ export const catalogoProductosPorCategoria = async (req, res) => {
     const { categoria } = req.params;
 
     try {
-        // Buscar la categoría por su nombre
+        
         const categoriaEncontrada = await Categorias.findOne({ nombre: categoria });
 
         if (!categoriaEncontrada) {
             return res.status(404).json({ error: 'Categoría no encontrada' });
         }
 
-        // Obtener solo los productos asociados a la categoría encontrada
+        
         const productos = await Productos.find({ categoria: categoriaEncontrada._id });
 
         res.status(200).json(productos);
@@ -161,3 +161,38 @@ export const catalogoProductosPorCategoria = async (req, res) => {
 };
 
 
+export const modificarStockProducto = async (req, res) => {
+    const { productoId } = req.params;
+    const { cantidad } = req.body;
+
+    try {
+
+        const producto = await Producto.findById(productoId);
+
+        if (!producto) {
+            return res.status(404).json({ msg: 'Producto no encontrado' });
+        }
+
+
+        if (cantidad > 0) {
+
+            producto.stock += cantidad;
+            await producto.save();
+            return res.status(200).json({ msg: 'Stock del producto aumentado exitosamente' });
+        } else if (cantidad < 0) {
+
+            const cantidadAbsoluta = Math.abs(cantidad);
+            if (producto.stock < cantidadAbsoluta) {
+                return res.status(400).json({ msg: 'No hay suficiente stock para restar' });
+            }
+            producto.stock -= cantidadAbsoluta;
+            await producto.save();
+            return res.status(200).json({ msg: 'Stock del producto disminuido exitosamente' });
+        } else {
+            return res.status(400).json({ msg: 'La cantidad debe ser positiva o negativa' });
+        }
+    } catch (error) {
+        console.error('Error al modificar el stock del producto:', error);
+        res.status(500).json({ error: 'Error al modificar el stock del producto' });
+    }
+};

@@ -5,6 +5,7 @@ import {
     crearFactura,
     obtenerFacturasUsuario,
     obtenerDetallesFactura,
+    obtenerProductosMasVendidos
 } from "./facturas.controller.js";
 
 const router = Router();
@@ -20,4 +21,5 @@ router.get('/', validarJWT, obtenerFacturasUsuario);
 
 router.get('/:facturaId', validarJWT, obtenerDetallesFactura);
 
+router.get('/productos-mas-vendidos', validarJWT, obtenerProductosMasVendidos);
 export default router;

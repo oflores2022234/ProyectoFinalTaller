@@ -4,19 +4,20 @@ import { validationResult } from 'express-validator';
 
 export const crearFactura = async (req, res) => {
     const usuario = req.usuario;
+    const idCarrito = req.carrito;
 
     try {
-        // Obtener el carrito del usuario
-        const carrito = await Carrito.findOne({ usuario });
+
+        const carrito = await Carrito.findOne({ idCarrito });
 
         if (!carrito) {
             return res.status(404).json({ msg: 'No se encontró ningún carrito para el usuario' });
         }
 
-        // Calcular el precio total sumando los subtotales de los productos en el carrito
+
         const precioTotal = carrito.productos.reduce((total, producto) => total + producto.subtotal, 0);
 
-        // Crear la factura
+
         const nuevaFactura = new Factura({
             usuario,
             carrito: carrito._id,
@@ -32,7 +33,7 @@ export const crearFactura = async (req, res) => {
     }
 };
 
-// Controlador para obtener todas las facturas de un usuario
+
 export const obtenerFacturasUsuario = async (req, res) => {
     const idCarrito = req.carrito;
 
@@ -47,7 +48,6 @@ export const obtenerFacturasUsuario = async (req, res) => {
 };
 
 
-// Controlador para obtener los detalles de una factura específica
 export const obtenerDetallesFactura = async (req, res) => {
     const { facturaId } = req.params;
 
@@ -65,5 +65,45 @@ export const obtenerDetallesFactura = async (req, res) => {
     } catch (error) {
         console.error('Error al obtener detalles de la factura:', error);
         res.status(500).json({ msg: 'Error al obtener detalles de la factura' });
+    }
+};
+
+
+export const obtenerProductosMasVendidos = async (req, res) => {
+    try {
+
+        const facturas = await Factura.find().populate('carrito');
+
+
+        const productosVendidos = new Map();
+
+
+        for (const factura of facturas) {
+            for (const producto of factura.carrito.productos) {
+                const nombreProducto = producto.nombreProducto;
+                const cantidad = producto.cantidad;
+
+
+                if (productosVendidos.has(nombreProducto)) {
+                    productosVendidos.set(nombreProducto, productosVendidos.get(nombreProducto) + cantidad);
+                } else { 
+                    productosVendidos.set(nombreProducto, cantidad);
+                }
+            }
+        }
+
+
+        const productosOrdenados = Array.from(productosVendidos, ([nombreProducto, cantidad]) => ({
+            nombreProducto,
+            cantidad
+        }));
+
+
+        productosOrdenados.sort((a, b) => b.cantidad - a.cantidad);
+
+        return res.status(200).json({ productosMasVendidos: productosOrdenados });
+    } catch (error) {
+        console.error('Error al obtener los productos más vendidos:', error);
+        res.status(500).json({ error: 'Error al obtener los productos más vendidos' });
     }
 };

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoriaCollection admin",
-    "dateExported": "2024-03-09T05:49:17.595Z",
+    "dateExported": "2024-03-14T07:00:35.372Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,17 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-07T03:14:43.220Z",
-            "modified": "2024-03-07T05:12:09.823Z",
+            "modified": "2024-03-14T05:14:03.725Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZWU2NWZkOWUzMjk3NzE5NGZhMjIiLCJpYXQiOjE3MDk3ODgzMDcsImV4cCI6MTcwOTc5MTkwN30._OyoaU71A_MCF9fZYwPRyo0kduSY9CpW7zJpMa0ruuA"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWYyNzkwNDYzZDkzZTA0NjlmZjMzMGUiLCJpYXQiOjE3MTAzOTI4MTQsImV4cCI6MTcxMDM5NjQxNH0.clEaZdcx4CwlxSh7Ngwhvu4gUFhIN8lIKmDcHHt5IGo"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Casa\",\n  \"descripcion\": \"Productos para el hogar\"\n}\n",
+                "raw": "{\n  \"nombre\": \"Pantalones\",\n  \"descripcion\": \"Productos de uso personal\"\n}\n",
                 "form": []
             },
             "reqType": "post",
@@ -73,18 +73,19 @@
             "colId": "633630a7-2b41-40ed-ad46-c0d945618b87",
             "containerId": "",
             "name": "categoria delete",
-            "url": "http://localhost:8080/shop/v1/categoria/65e8d593c4e106a0f7fad0f9",
+            "url": "http://localhost:8080/shop/v1/categoria/65f2879b5776278b7ff0b04d",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2024-03-07T03:14:43.223Z",
-            "modified": "2024-03-07T03:14:43.223Z",
+            "modified": "2024-03-14T05:15:15.882Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4ZDM1MGRlYTVjZDI3MDYwMDUyOWIiLCJpYXQiOjE3MDk3NTcyNzcsImV4cCI6MTcwOTc2MDg3N30.neM5DWu8WPVHmOJDvOziDdkM7pU4imYhpU9UZ7SuTlM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWYyNzkwNDYzZDkzZTA0NjlmZjMzMGUiLCJpYXQiOjE3MTAzOTI4MTQsImV4cCI6MTcxMDM5NjQxNH0.clEaZdcx4CwlxSh7Ngwhvu4gUFhIN8lIKmDcHHt5IGo"
                 }
             ],
             "params": [],
+            "reqType": "del",
             "tests": []
         }
     ]
