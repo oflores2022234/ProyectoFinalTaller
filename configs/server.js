@@ -12,6 +12,7 @@ import authRoutes from '../src/auth/auth.routes.js';
 import categoriaRoutes from '../src/categorias/categorias.routes.js';
 import productoRoutes from '../src/productos/productos.routes.js';
 import carritoRoutes from '../src/carrito/carrito.routes.js';
+import facturaRoutes from '../src/facturas/facturas.routes.js';
 
 
 class Server{
@@ -23,6 +24,7 @@ class Server{
         this.categoriaPath = '/shop/v1/categoria'
         this.productoPath = '/shop/v1/producto'
         this.carritoPath = '/shop/v1/carrito'
+        this.facturaPath = '/shop/v1/factura'
 
         this.middlewares();
         this.conectarDB();
@@ -57,8 +59,9 @@ class Server{
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.usuarioPath, userRoutes);
         this.app.use(this.categoriaPath, categoriaRoutes);
-        this.app.use(this.productoPath, productoRoutes)
-        this.app.use(this.carritoPath, carritoRoutes)
+        this.app.use(this.productoPath, productoRoutes);
+        this.app.use(this.carritoPath, carritoRoutes);
+        this.app.use(this.facturaPath, facturaRoutes);
     }
 
     listen(){

@@ -11,7 +11,7 @@ import { esCliente } from "../middlewares/verificar-role.js";
 
 const router = Router();
 
-router.get("/", validarJWT, esCliente, getCarrito);
+router.get("/", validarJWT, getCarrito);
 router.delete("/", validarJWT, esCliente, deleteCarrito);
 
 router.post(

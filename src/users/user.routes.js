@@ -29,7 +29,6 @@ router.post(
     }),
     check("correo", "Este no es un correo válido").isEmail(),
     check("correo").custom(existenteEmail),
-    check("role", "the role is obligatory").not().isEmpty(),
     validarCampos,
   ],
   usuariosPost

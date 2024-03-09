@@ -26,7 +26,7 @@ import { esCliente } from "../middlewares/verificar-role.js";
 
 const router = Router();
 
-router.get("/", esAdmin, productosGet);
+router.get("/", productosGet);
 router.get("/control-inventario", esAdmin, controlInventario);
 router.get("/productos-agotados", esAdmin, productosAgotados);
 router.get("/buscar", esCliente, buscarProductosPorNombre);
