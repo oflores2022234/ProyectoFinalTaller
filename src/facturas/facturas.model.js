@@ -1,14 +1,18 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const FacturaSchema = mongoose.Schema({
     usuario: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Usuario",
+        ref: 'Usuario',
         required: true
     },
     carrito: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Carrito',
+        required: true
+    },
+    precioTotal: {
+        type: Number,
         required: true
     },
     fecha: {
