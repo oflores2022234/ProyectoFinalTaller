@@ -7,16 +7,18 @@ import {
     } from "./carrito.controller.js";
 
 import { validarJWT } from "../middlewares/validar-jwt.js";
+import { esCliente } from "../middlewares/verificar-role.js";
 
 const router = Router();
 
-router.get("/", validarJWT, getCarrito);
-router.delete("/", validarJWT, deleteCarrito);
+router.get("/", validarJWT, esCliente, getCarrito);
+router.delete("/", validarJWT, esCliente, deleteCarrito);
 
 router.post(
     "/",
     [
         validarJWT,
+        esCliente,
         check("nombreProducto", "El nombre del producto es obligatorio").not().isEmpty(),
         check("cantidad", "La cantidad es obligatoria").not().isEmpty(),
     ],

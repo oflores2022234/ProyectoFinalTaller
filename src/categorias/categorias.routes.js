@@ -14,6 +14,7 @@ import {
 } from "../helpers/db-validators.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
+import { esAdmin } from "../middlewares/verificar-role.js";
 
 const router = Router();
 
@@ -23,6 +24,7 @@ router.post(
     "/",
     [
         validarJWT,
+        esAdmin,
         check("nombre").custom(existenteCategoria),
         check('descripcion', "The description is obligatory").not().isEmpty(),
         validarCampos,
@@ -32,6 +34,7 @@ router.put(
     "/:id",
     [
         validarJWT,
+        esAdmin,
         check("id", "Id no valid").isMongoId(),
         check("id").custom(existeCategoriaById),
         validarCampos,
@@ -42,6 +45,7 @@ router.delete(
     "/:id",
     [
         validarJWT,
+        esAdmin,
         check("id", "Id no valid").isMongoId(),
         check("id").custom(existeCategoriaById),
         validarCampos,
